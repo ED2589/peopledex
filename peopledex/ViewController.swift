@@ -21,7 +21,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDele
     // original position of the 3D model
     var originalTransform:SCNMatrix4!
     var modelNode:SCNNode!
-    let rootNodeName = "person"
+    let rootNodeName = "shipMesh"
     
     var heading : Double! = 0.0
     var distance : Float! = 0.0 {
@@ -60,6 +60,15 @@ class ViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDele
         
         // Set the initial status
         status = "Getting user location..."
+        
+//        let handle = setTimeout(3, block: { () -> Void in
+            // do this stuff after 3 seconds
+//        DispatchQueue.main.async {
+            self.updateLocation(43.6686301,-79.3932099)
+//        }
+//            self.updateLocation(43.6686301,-79.3932099)
+//        })
+        
         
         // Set a padding in the text view
 //        statusTextView.textContainerInset = UIEdgeInsets(top: 20.0, left: 10.0, bottom: 10.0, right: 0.0)
@@ -155,6 +164,16 @@ class ViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDele
             arrow.position = SCNVector3Make(0, 4, 0)
             // Add it as a child of the car model
             self.modelNode.addChildNode(arrow)
+        } else {
+            // Begin animation
+            SCNTransaction.begin()
+            SCNTransaction.animationDuration = 1.0
+            
+            // Position the model in the correct place
+            positionModel(location)
+            
+            // End animation
+            SCNTransaction.commit()
         }
     }
     
@@ -244,19 +263,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDele
         return atan2(y, x)
     }
 
-   
+    // helper function for delaying execution
+   func setTimeout(_ delay:TimeInterval, block:@escaping ()->Void) -> Timer {        return Timer.scheduledTimer(timeInterval: delay, target: BlockOperation(block: block), selector: #selector(Operation.main), userInfo: nil, repeats: false)
+    }
 }
-
-//extension String {
-//    func image() -> UIImage? {
-//        let size = CGSize(width: 100, height: 100)
-//        UIGraphicsBeginImageContextWithOptions(size, false, 0)
-//        UIColor.clear.set()
-//        let rect = CGRect(origin: CGPoint(), size: size)
-//        UIRectFill(CGRect(origin: CGPoint(), size: size))
-//        (self as NSString).draw(in: rect, withAttributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 90)])
-//        let image = UIGraphicsGetImageFromCurrentImageContext()
-//        UIGraphicsEndImageContext()
-//        return image
-//    }
-//}
