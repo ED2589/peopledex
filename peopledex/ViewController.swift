@@ -8,9 +8,21 @@
 
 import UIKit
 import SceneKit
+import CoreLocation
 import ARKit
 
-class ViewController: UIViewController, ARSCNViewDelegate {
+class ViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDelegate {
+    
+    @IBOutlet weak var statusTextView: UITextView!
+    
+    let locationManager = CLLocationManager()
+    var userLocation = CLLocation()
+    
+    var status: String! {
+        didSet {
+            setStatusText()
+        }
+    }
 
     @IBOutlet var sceneView: ARSCNView!
     
@@ -28,6 +40,17 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         
         // Set the scene to the view
         sceneView.scene = scene
+        
+        // Start location services
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestWhenInUseAuthorization()
+        
+        // Set the initial status
+        status = "Getting user location..."
+        
+        // Set a padding in the text view
+//        statusTextView.textContainerInset = UIEdgeInsets(top: 20.0, left: 10.0, bottom: 10.0, right: 0.0)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -72,4 +95,27 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         // Reset tracking and/or remove existing anchors if consistent tracking is required
         
     }
+    
+    func setStatusText() {
+        let distance = 50
+        var text = "Status: \(status!)\n"
+        text += "Distance: \(String(format: "%.2f m", distance))"
+        statusTextView.text = text
+    }
+    
+   
 }
+
+//extension String {
+//    func image() -> UIImage? {
+//        let size = CGSize(width: 100, height: 100)
+//        UIGraphicsBeginImageContextWithOptions(size, false, 0)
+//        UIColor.clear.set()
+//        let rect = CGRect(origin: CGPoint(), size: size)
+//        UIRectFill(CGRect(origin: CGPoint(), size: size))
+//        (self as NSString).draw(in: rect, withAttributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 90)])
+//        let image = UIGraphicsGetImageFromCurrentImageContext()
+//        UIGraphicsEndImageContext()
+//        return image
+//    }
+//}
