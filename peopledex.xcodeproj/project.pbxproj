@@ -15,6 +15,7 @@
 		25519EA821311EBD00FD8793 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25519EA621311EBD00FD8793 /* LaunchScreen.storyboard */; };
 		25519EB02131EB5D00FD8793 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25519EAF2131EB5D00FD8793 /* String+Extension.swift */; };
 		25519EB22131EC2C00FD8793 /* FloatingPoint+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25519EB12131EC2C00FD8793 /* FloatingPoint+Extension.swift */; };
+		303296B5B1A269746A915A3F /* Pods_peopledex.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFC0183CEFA38C9484BB08E7 /* Pods_peopledex.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,9 @@
 		25519EA921311EBD00FD8793 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		25519EAF2131EB5D00FD8793 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		25519EB12131EC2C00FD8793 /* FloatingPoint+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FloatingPoint+Extension.swift"; sourceTree = "<group>"; };
+		4BEFA791D0AD2D07F2B963DA /* Pods-peopledex.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-peopledex.release.xcconfig"; path = "Pods/Target Support Files/Pods-peopledex/Pods-peopledex.release.xcconfig"; sourceTree = "<group>"; };
+		BFC0183CEFA38C9484BB08E7 /* Pods_peopledex.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_peopledex.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C30B9CA76EA4BC152BB7509D /* Pods-peopledex.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-peopledex.debug.xcconfig"; path = "Pods/Target Support Files/Pods-peopledex/Pods-peopledex.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +39,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				303296B5B1A269746A915A3F /* Pods_peopledex.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -46,6 +51,8 @@
 			children = (
 				25519E9A21311EBB00FD8793 /* peopledex */,
 				25519E9921311EBB00FD8793 /* Products */,
+				5193139348492DCE70C31D89 /* Pods */,
+				5BD3500D6D2ACEB7B0AB2061 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -73,6 +80,23 @@
 			path = peopledex;
 			sourceTree = "<group>";
 		};
+		5193139348492DCE70C31D89 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C30B9CA76EA4BC152BB7509D /* Pods-peopledex.debug.xcconfig */,
+				4BEFA791D0AD2D07F2B963DA /* Pods-peopledex.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		5BD3500D6D2ACEB7B0AB2061 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BFC0183CEFA38C9484BB08E7 /* Pods_peopledex.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -80,9 +104,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 25519EAC21311EBD00FD8793 /* Build configuration list for PBXNativeTarget "peopledex" */;
 			buildPhases = (
+				442B84C16ED069DFDA16D251 /* [CP] Check Pods Manifest.lock */,
 				25519E9421311EBB00FD8793 /* Sources */,
 				25519E9521311EBB00FD8793 /* Frameworks */,
 				25519E9621311EBB00FD8793 /* Resources */,
+				B3923D07C6229624613A25B1 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -139,6 +165,53 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		442B84C16ED069DFDA16D251 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-peopledex-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B3923D07C6229624613A25B1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-peopledex/Pods-peopledex-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/PusherSwift/PusherSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PusherSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-peopledex/Pods-peopledex-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		25519E9421311EBB00FD8793 /* Sources */ = {
@@ -292,6 +365,7 @@
 		};
 		25519EAD21311EBD00FD8793 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C30B9CA76EA4BC152BB7509D /* Pods-peopledex.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -311,6 +385,7 @@
 		};
 		25519EAE21311EBD00FD8793 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4BEFA791D0AD2D07F2B963DA /* Pods-peopledex.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

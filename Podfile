@@ -6,5 +6,5 @@ target 'peopledex' do
   use_frameworks!
 
   # Pods for peopledex
-
+  pod 'PusherSwift', '~> 5.1.1'
 end

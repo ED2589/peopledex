@@ -9,7 +9,16 @@
 import UIKit
 import SceneKit
 import CoreLocation
-import ARKit
+import ARKit  
+import PusherSwift
+
+let pusher = Pusher(
+    key: "e683ac5d287400ba35ac",
+    options: PusherClientOptions(
+        authMethod: .inline(secret: "4ea539cb935d709829c0"),
+        host: .cluster("us2")
+    )
+)
 
 class ViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDelegate {
     
@@ -144,12 +153,11 @@ class ViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDele
             print(userLocation.coordinate.longitude)
 //            let handle = setTimeout(3, block: { () -> Void in
                 // do this stuff after 3 seconds
-            self.status = "Uodated other person's location"
+//            self.status = "Uodated other person's location"
             self.updateLocation(43.6686301,-79.3932099)
 //            })
-            status = "Getting location of other person..."
-            // TODO: Custom location finding
-//            self.connectToPusher()
+            self.status = "Connecting to pusher..."
+            self.connectToPusher()
         }
     }
     
@@ -193,6 +201,26 @@ class ViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDele
             // End animation
             SCNTransaction.commit()
         }
+    }
+    
+    func connectToPusher() {
+        // subscribe to channel and bind to event
+        let channel = pusher.subscribe("private-channel")
+        
+        let _ = channel.bind(eventName: "client-new-location", callback: { (data: Any?) -> Void in
+            if let data = data as? [String : AnyObject] {
+                if let latitude = Double(data["latitude"] as! String),
+                    let longitude = Double(data["longitude"] as! String),
+                    let heading = Double(data["heading"] as! String)  {
+                    self.status = "User's location received"
+                    self.heading = heading
+                    self.updateLocation(latitude, longitude)
+                }
+            }
+        })
+        
+        pusher.connect()
+        status = "Waiting to receive location events..."
     }
     
     // Scales the emoji
