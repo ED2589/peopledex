@@ -61,14 +61,6 @@ class ViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDele
         // Set the initial status
         status = "Getting user location..."
         
-//        let handle = setTimeout(3, block: { () -> Void in
-            // do this stuff after 3 seconds
-//        DispatchQueue.main.async {
-            self.updateLocation(43.6686301,-79.3932099)
-//        }
-//            self.updateLocation(43.6686301,-79.3932099)
-//        })
-        
         
         // Set a padding in the text view
 //        statusTextView.textContainerInset = UIEdgeInsets(top: 20.0, left: 10.0, bottom: 10.0, right: 0.0)
@@ -137,12 +129,38 @@ class ViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDele
                          didChangeAuthorization status: CLAuthorizationStatus) {
         if status == .authorizedWhenInUse {
             locationManager.requestLocation()
+            print("requesting location")
+        } else {
+            print("not requesting location")
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager,
+                         didUpdateLocations locations: [CLLocation]) {
+        if let location = locations.last {
+            userLocation = location
+            print("Initial location")
+            print(userLocation.coordinate.latitude)
+            print(userLocation.coordinate.longitude)
+//            let handle = setTimeout(3, block: { () -> Void in
+                // do this stuff after 3 seconds
+                self.status = "Uodated other person's location"
+                self.updateLocation(43.6686301,-79.3932099)
+//            })
+            status = "Getting location of other person..."
+            // TODO: Custom location finding
+//            self.connectToPusher()
         }
     }
     
     func updateLocation(_ latitude : Double, _ longitude : Double) {
         let location = CLLocation(latitude: latitude, longitude: longitude)
         self.distance = Float(location.distance(from: self.userLocation))
+        print(latitude)
+        print(longitude)
+        print("Our location below")
+        print(self.userLocation.coordinate.latitude)
+        print(self.userLocation.coordinate.longitude)
         if self.modelNode == nil {
             let modelScene = SCNScene(named: "art.scnassets/ship.scn")!
             self.modelNode = modelScene.rootNode.childNode(withName: rootNodeName, recursively: true)!
@@ -178,7 +196,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDele
     }
     
     func makeBillboardNode(_ image: UIImage) -> SCNNode {
-        let plane = SCNPlane(width: 10, height: 10)
+        let plane = SCNPlane(width: 0.5, height: 0.5)
         plane.firstMaterial!.diffuse.contents = image
         let node = SCNNode(geometry: plane)
         node.constraints = [SCNBillboardConstraint()]
@@ -203,7 +221,10 @@ class ViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDele
     }
     
     func scaleNode (_ location: CLLocation) -> SCNVector3 {
-        let scale = min( max( Float(1000/distance), 1.5 ), 3 )
+        print("Scaling the node")
+        print(distance)
+//        let scale = min( max( Float(1000/distance), 1.5 ), 3 )
+        let scale = Float(0.05)
         return SCNVector3(x: scale, y: scale, z: scale)
     }
     
