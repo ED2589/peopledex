@@ -48,7 +48,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDele
         sceneView.showsStatistics = true
         
         // Create a new scene
-        let scene = SCNScene(named: "art.scnassets/ship.scn")!
+        let scene = SCNScene()
         
         // Set the scene to the view
         sceneView.scene = scene
@@ -144,8 +144,8 @@ class ViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDele
             print(userLocation.coordinate.longitude)
 //            let handle = setTimeout(3, block: { () -> Void in
                 // do this stuff after 3 seconds
-                self.status = "Uodated other person's location"
-                self.updateLocation(43.6686301,-79.3932099)
+            self.status = "Uodated other person's location"
+            self.updateLocation(43.6686301,-79.3932099)
 //            })
             status = "Getting location of other person..."
             // TODO: Custom location finding
@@ -195,6 +195,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDele
         }
     }
     
+    // Scales the emoji
     func makeBillboardNode(_ image: UIImage) -> SCNNode {
         let plane = SCNPlane(width: 0.5, height: 0.5)
         plane.firstMaterial!.diffuse.contents = image
@@ -221,10 +222,10 @@ class ViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDele
     }
     
     func scaleNode (_ location: CLLocation) -> SCNVector3 {
-        print("Scaling the node")
+        print("Scaling the plane")
         print(distance)
 //        let scale = min( max( Float(1000/distance), 1.5 ), 3 )
-        let scale = Float(0.05)
+        let scale = Float(0.0000001)
         return SCNVector3(x: scale, y: scale, z: scale)
     }
     
