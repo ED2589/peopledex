@@ -1,0 +1,675 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		154A34134E7900A9C2C223DEB04AB577 /* PusherSwift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D4B6DC4C74EDF75C832CD4958DFA669E /* PusherSwift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		22383C50B044F9F590B82CED5AB1430E /* PusherGlobalChannel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E745616D63CE395908794B2E5891C0AA /* PusherGlobalChannel.swift */; };
+		2AC0A245543E0A8F68A06B85F102BE56 /* ObjectiveC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD24FF11FB16DEC0BD555D3A45A2065 /* ObjectiveC.swift */; };
+		66979FCD2A911D9C2476DC78AD15612C /* PusherDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381F4C4153BB5B56FCDE9379B24B70B1 /* PusherDelegate.swift */; };
+		6B4CF6570DBFED7DFC5BA4906D1EEE0A /* PusherWebsocketDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981E4C34ECB73FF29B79847A056CC8FF /* PusherWebsocketDelegate.swift */; };
+		70CCFFBB3D27F029D575EF5591A5F7FF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
+		809FBA9E86415D7901C2ACB4C85241EB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
+		824C6FD8CCCEF86C727D0AB077EF360C /* Pods-peopledex-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3EA8D825F2E28DAD90BBD0B3C8FC344E /* Pods-peopledex-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		89CCAB7ED50B236B8AD859A498141376 /* PusherSwift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 113E5493CA74D4BCDFFEB277D4569AAC /* PusherSwift-dummy.m */; };
+		8D38E33C85D255270DBCF15E3965CB59 /* Pods-peopledex-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 86CF0D50F93C003D01ECBDB433F5A8CF /* Pods-peopledex-dummy.m */; };
+		903B128BF24939B83FB6658DA1DC59C3 /* NativePusher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9990DEDD82F8CA6E545AD5A064C421BE /* NativePusher.swift */; };
+		9739A3B7545AF96FCACD9932F005CCD4 /* TaskQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 362A41BB270A92B1BA0009EBD24CA590 /* TaskQueue.swift */; };
+		AC737CB3EC18448CAD8B217A0931E353 /* CryptoSwiftMicroModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9205CD7F67DC308A806F91BAD39692E7 /* CryptoSwiftMicroModule.swift */; };
+		DB97464FD6663432061E2DFDAEB2AEF5 /* Authorizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8242294F549D85C34C32ADC39F9E2D56 /* Authorizer.swift */; };
+		E3817D1147C4625720074136F53939C1 /* PusherClientOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2F6CB262937762414E83071D86C59F /* PusherClientOptions.swift */; };
+		EE3B9C2D253B06CF42311DDE4D85B05E /* PusherPresenceChannel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4AF58D2E858BCFD06A9E6ECEDF9F447 /* PusherPresenceChannel.swift */; };
+		F2F6ACF8BB25CA2BAF642994DF9A5606 /* Starscream.swift in Sources */ = {isa = PBXBuildFile; fileRef = A418BE5434E32B7319D191418F31154C /* Starscream.swift */; };
+		F44B5753074909CEC7356F176FA9F66D /* PusherConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385CE6375D94D147779B06A1522AF489 /* PusherConnection.swift */; };
+		F6D146461EBCADF1AC43207F8C9EA4F1 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE343599895376277D3F79008263CF30 /* Reachability.swift */; };
+		F86BEA57BC7B0476B835293685F3A3AB /* PusherChannels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9389A9A4DC1ED38E0F5CF7FEDE2FFECF /* PusherChannels.swift */; };
+		FC4AA0C2740296A110C5617A105DF68F /* AuthRequestBuilderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE23BED7F6013213962D319616300C2D /* AuthRequestBuilderProtocol.swift */; };
+		FC5BB08990F707E6CBE8B2B52AC83840 /* PusherSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B06AD78D33F1B2A34C003EB22531CDE /* PusherSwift.swift */; };
+		FF9457A174D027D9A8007CCDB528B2C6 /* PusherChannel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E8243D48000FD5AB738F028BE4152D /* PusherChannel.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E7A3BCD9F6D44812D7BA21638915266D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 552B0E866B5D59775A9C0C61276107EC;
+			remoteInfo = PusherSwift;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		07E8243D48000FD5AB738F028BE4152D /* PusherChannel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PusherChannel.swift; path = Sources/PusherChannel.swift; sourceTree = "<group>"; };
+		0A187DCB83C893C61909C80486BCBD49 /* PusherSwift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PusherSwift-prefix.pch"; sourceTree = "<group>"; };
+		113E5493CA74D4BCDFFEB277D4569AAC /* PusherSwift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "PusherSwift-dummy.m"; sourceTree = "<group>"; };
+		1CD24FF11FB16DEC0BD555D3A45A2065 /* ObjectiveC.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ObjectiveC.swift; path = Sources/ObjectiveC.swift; sourceTree = "<group>"; };
+		362A41BB270A92B1BA0009EBD24CA590 /* TaskQueue.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TaskQueue.swift; path = Sources/TaskQueue.swift; sourceTree = "<group>"; };
+		381F4C4153BB5B56FCDE9379B24B70B1 /* PusherDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PusherDelegate.swift; path = Sources/PusherDelegate.swift; sourceTree = "<group>"; };
+		385CE6375D94D147779B06A1522AF489 /* PusherConnection.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PusherConnection.swift; path = Sources/PusherConnection.swift; sourceTree = "<group>"; };
+		3CA1083BE35A6D84CA2967BD21001307 /* Pods-peopledex-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-peopledex-acknowledgements.plist"; sourceTree = "<group>"; };
+		3EA8D825F2E28DAD90BBD0B3C8FC344E /* Pods-peopledex-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-peopledex-umbrella.h"; sourceTree = "<group>"; };
+		3F2F6CB262937762414E83071D86C59F /* PusherClientOptions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PusherClientOptions.swift; path = Sources/PusherClientOptions.swift; sourceTree = "<group>"; };
+		53C26E71E9C13AB72F56291ED5286FF5 /* Pods-peopledex.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-peopledex.modulemap"; sourceTree = "<group>"; };
+		5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		661426897CA00FB3E7BD46887445FAB3 /* Pods-peopledex-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-peopledex-acknowledgements.markdown"; sourceTree = "<group>"; };
+		8242294F549D85C34C32ADC39F9E2D56 /* Authorizer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Authorizer.swift; path = Sources/Authorizer.swift; sourceTree = "<group>"; };
+		86CF0D50F93C003D01ECBDB433F5A8CF /* Pods-peopledex-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-peopledex-dummy.m"; sourceTree = "<group>"; };
+		880E0A258B542D93013783F7414FDA58 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9205CD7F67DC308A806F91BAD39692E7 /* CryptoSwiftMicroModule.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CryptoSwiftMicroModule.swift; path = Sources/CryptoSwiftMicroModule.swift; sourceTree = "<group>"; };
+		9389A9A4DC1ED38E0F5CF7FEDE2FFECF /* PusherChannels.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PusherChannels.swift; path = Sources/PusherChannels.swift; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93A906898B0DB9FDAA2B4C8AC9AFF8C5 /* Pods-peopledex-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-peopledex-frameworks.sh"; sourceTree = "<group>"; };
+		981E4C34ECB73FF29B79847A056CC8FF /* PusherWebsocketDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PusherWebsocketDelegate.swift; path = Sources/PusherWebsocketDelegate.swift; sourceTree = "<group>"; };
+		9990DEDD82F8CA6E545AD5A064C421BE /* NativePusher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NativePusher.swift; path = Sources/NativePusher.swift; sourceTree = "<group>"; };
+		9B06AD78D33F1B2A34C003EB22531CDE /* PusherSwift.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PusherSwift.swift; path = Sources/PusherSwift.swift; sourceTree = "<group>"; };
+		A378E7B0D634CB60F544BAE6A75A46B7 /* Pods-peopledex-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-peopledex-resources.sh"; sourceTree = "<group>"; };
+		A418BE5434E32B7319D191418F31154C /* Starscream.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Starscream.swift; path = Sources/Starscream.swift; sourceTree = "<group>"; };
+		A9E5787DC0A5FE0A3068CC4085D8DE01 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AE343599895376277D3F79008263CF30 /* Reachability.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Reachability.swift; path = Sources/Reachability.swift; sourceTree = "<group>"; };
+		AFD12FD36CA96BB8FCFE4F74044AF4B6 /* Pods_peopledex.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_peopledex.framework; path = "Pods-peopledex.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B9B38670F7DFB1B5E112E5EA5DCBE6FB /* PusherSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = PusherSwift.framework; path = PusherSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB894111BDE8554BBAEDB40F37BC6AC5 /* PusherSwift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = PusherSwift.modulemap; sourceTree = "<group>"; };
+		D4AF58D2E858BCFD06A9E6ECEDF9F447 /* PusherPresenceChannel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PusherPresenceChannel.swift; path = Sources/PusherPresenceChannel.swift; sourceTree = "<group>"; };
+		D4B6DC4C74EDF75C832CD4958DFA669E /* PusherSwift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PusherSwift-umbrella.h"; sourceTree = "<group>"; };
+		E745616D63CE395908794B2E5891C0AA /* PusherGlobalChannel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PusherGlobalChannel.swift; path = Sources/PusherGlobalChannel.swift; sourceTree = "<group>"; };
+		E93BC1995926A1333B70CEFD33FDC596 /* Pods-peopledex.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-peopledex.release.xcconfig"; sourceTree = "<group>"; };
+		EE5D718D4B0BC9CC0DD83B5F42B3159E /* PusherSwift.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = PusherSwift.xcconfig; sourceTree = "<group>"; };
+		FE23BED7F6013213962D319616300C2D /* AuthRequestBuilderProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AuthRequestBuilderProtocol.swift; path = Sources/AuthRequestBuilderProtocol.swift; sourceTree = "<group>"; };
+		FE7C0BA979886FA7BC13DDADFA5BBA21 /* Pods-peopledex.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-peopledex.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		507F37761895FF45AF869A114096E6DC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				809FBA9E86415D7901C2ACB4C85241EB /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C7D6343DCC2B8AA125989C69DA941F14 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				70CCFFBB3D27F029D575EF5591A5F7FF /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		03E2959B8A2384492981E0FCDB383366 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AFD12FD36CA96BB8FCFE4F74044AF4B6 /* Pods_peopledex.framework */,
+				B9B38670F7DFB1B5E112E5EA5DCBE6FB /* PusherSwift.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		22A60307C935FB4D603D54CB7A207BF5 /* Pods-peopledex */ = {
+			isa = PBXGroup;
+			children = (
+				A9E5787DC0A5FE0A3068CC4085D8DE01 /* Info.plist */,
+				53C26E71E9C13AB72F56291ED5286FF5 /* Pods-peopledex.modulemap */,
+				661426897CA00FB3E7BD46887445FAB3 /* Pods-peopledex-acknowledgements.markdown */,
+				3CA1083BE35A6D84CA2967BD21001307 /* Pods-peopledex-acknowledgements.plist */,
+				86CF0D50F93C003D01ECBDB433F5A8CF /* Pods-peopledex-dummy.m */,
+				93A906898B0DB9FDAA2B4C8AC9AFF8C5 /* Pods-peopledex-frameworks.sh */,
+				A378E7B0D634CB60F544BAE6A75A46B7 /* Pods-peopledex-resources.sh */,
+				3EA8D825F2E28DAD90BBD0B3C8FC344E /* Pods-peopledex-umbrella.h */,
+				FE7C0BA979886FA7BC13DDADFA5BBA21 /* Pods-peopledex.debug.xcconfig */,
+				E93BC1995926A1333B70CEFD33FDC596 /* Pods-peopledex.release.xcconfig */,
+			);
+			name = "Pods-peopledex";
+			path = "Target Support Files/Pods-peopledex";
+			sourceTree = "<group>";
+		};
+		5B385EDA3ED3B6619E336068845A799E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E0F3AA4E0723C50BA31A9F3E56901CB1 /* PusherSwift */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		5E0D919E635D23B70123790B8308F8EF /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				5B385EDA3ED3B6619E336068845A799E /* Pods */,
+				03E2959B8A2384492981E0FCDB383366 /* Products */,
+				D5EA6068385548843D29D93147B41E92 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		7E98AEB4A3E4FCC9A57A4495AD389E14 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				880E0A258B542D93013783F7414FDA58 /* Info.plist */,
+				CB894111BDE8554BBAEDB40F37BC6AC5 /* PusherSwift.modulemap */,
+				EE5D718D4B0BC9CC0DD83B5F42B3159E /* PusherSwift.xcconfig */,
+				113E5493CA74D4BCDFFEB277D4569AAC /* PusherSwift-dummy.m */,
+				0A187DCB83C893C61909C80486BCBD49 /* PusherSwift-prefix.pch */,
+				D4B6DC4C74EDF75C832CD4958DFA669E /* PusherSwift-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/PusherSwift";
+			sourceTree = "<group>";
+		};
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5E0D919E635D23B70123790B8308F8EF /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D5EA6068385548843D29D93147B41E92 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				22A60307C935FB4D603D54CB7A207BF5 /* Pods-peopledex */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		E0F3AA4E0723C50BA31A9F3E56901CB1 /* PusherSwift */ = {
+			isa = PBXGroup;
+			children = (
+				8242294F549D85C34C32ADC39F9E2D56 /* Authorizer.swift */,
+				FE23BED7F6013213962D319616300C2D /* AuthRequestBuilderProtocol.swift */,
+				9205CD7F67DC308A806F91BAD39692E7 /* CryptoSwiftMicroModule.swift */,
+				9990DEDD82F8CA6E545AD5A064C421BE /* NativePusher.swift */,
+				1CD24FF11FB16DEC0BD555D3A45A2065 /* ObjectiveC.swift */,
+				07E8243D48000FD5AB738F028BE4152D /* PusherChannel.swift */,
+				9389A9A4DC1ED38E0F5CF7FEDE2FFECF /* PusherChannels.swift */,
+				3F2F6CB262937762414E83071D86C59F /* PusherClientOptions.swift */,
+				385CE6375D94D147779B06A1522AF489 /* PusherConnection.swift */,
+				381F4C4153BB5B56FCDE9379B24B70B1 /* PusherDelegate.swift */,
+				E745616D63CE395908794B2E5891C0AA /* PusherGlobalChannel.swift */,
+				D4AF58D2E858BCFD06A9E6ECEDF9F447 /* PusherPresenceChannel.swift */,
+				9B06AD78D33F1B2A34C003EB22531CDE /* PusherSwift.swift */,
+				981E4C34ECB73FF29B79847A056CC8FF /* PusherWebsocketDelegate.swift */,
+				AE343599895376277D3F79008263CF30 /* Reachability.swift */,
+				A418BE5434E32B7319D191418F31154C /* Starscream.swift */,
+				362A41BB270A92B1BA0009EBD24CA590 /* TaskQueue.swift */,
+				7E98AEB4A3E4FCC9A57A4495AD389E14 /* Support Files */,
+			);
+			name = PusherSwift;
+			path = PusherSwift;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		AB5B8F79266508C716CB10662725FF59 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				154A34134E7900A9C2C223DEB04AB577 /* PusherSwift-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F494FCDBC7AE6694E6E834F3C5D16BD2 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				824C6FD8CCCEF86C727D0AB077EF360C /* Pods-peopledex-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		31755A4974A9625121B4C43D2569CA69 /* Pods-peopledex */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6CA6700FBD7243C5B9D9862C65D32712 /* Build configuration list for PBXNativeTarget "Pods-peopledex" */;
+			buildPhases = (
+				F494FCDBC7AE6694E6E834F3C5D16BD2 /* Headers */,
+				E0ED411C31E158196BB5D813AAE2A3AB /* Sources */,
+				507F37761895FF45AF869A114096E6DC /* Frameworks */,
+				EE333149A26051A99EFCFB88766BD10A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				886EFFFBF3EEEEE179BC93ED40529A52 /* PBXTargetDependency */,
+			);
+			name = "Pods-peopledex";
+			productName = "Pods-peopledex";
+			productReference = AFD12FD36CA96BB8FCFE4F74044AF4B6 /* Pods_peopledex.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		552B0E866B5D59775A9C0C61276107EC /* PusherSwift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F4BD5832021C7C4A10125AE2047E9E12 /* Build configuration list for PBXNativeTarget "PusherSwift" */;
+			buildPhases = (
+				AB5B8F79266508C716CB10662725FF59 /* Headers */,
+				451CF98B567D1CEB05D280D2A9B7AB88 /* Sources */,
+				C7D6343DCC2B8AA125989C69DA941F14 /* Frameworks */,
+				554F77C2EE196E3F712F6CA1C15A9233 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PusherSwift;
+			productName = PusherSwift;
+			productReference = B9B38670F7DFB1B5E112E5EA5DCBE6FB /* PusherSwift.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 0930;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = 03E2959B8A2384492981E0FCDB383366 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				31755A4974A9625121B4C43D2569CA69 /* Pods-peopledex */,
+				552B0E866B5D59775A9C0C61276107EC /* PusherSwift */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		554F77C2EE196E3F712F6CA1C15A9233 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EE333149A26051A99EFCFB88766BD10A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		451CF98B567D1CEB05D280D2A9B7AB88 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB97464FD6663432061E2DFDAEB2AEF5 /* Authorizer.swift in Sources */,
+				FC4AA0C2740296A110C5617A105DF68F /* AuthRequestBuilderProtocol.swift in Sources */,
+				AC737CB3EC18448CAD8B217A0931E353 /* CryptoSwiftMicroModule.swift in Sources */,
+				903B128BF24939B83FB6658DA1DC59C3 /* NativePusher.swift in Sources */,
+				2AC0A245543E0A8F68A06B85F102BE56 /* ObjectiveC.swift in Sources */,
+				FF9457A174D027D9A8007CCDB528B2C6 /* PusherChannel.swift in Sources */,
+				F86BEA57BC7B0476B835293685F3A3AB /* PusherChannels.swift in Sources */,
+				E3817D1147C4625720074136F53939C1 /* PusherClientOptions.swift in Sources */,
+				F44B5753074909CEC7356F176FA9F66D /* PusherConnection.swift in Sources */,
+				66979FCD2A911D9C2476DC78AD15612C /* PusherDelegate.swift in Sources */,
+				22383C50B044F9F590B82CED5AB1430E /* PusherGlobalChannel.swift in Sources */,
+				EE3B9C2D253B06CF42311DDE4D85B05E /* PusherPresenceChannel.swift in Sources */,
+				89CCAB7ED50B236B8AD859A498141376 /* PusherSwift-dummy.m in Sources */,
+				FC5BB08990F707E6CBE8B2B52AC83840 /* PusherSwift.swift in Sources */,
+				6B4CF6570DBFED7DFC5BA4906D1EEE0A /* PusherWebsocketDelegate.swift in Sources */,
+				F6D146461EBCADF1AC43207F8C9EA4F1 /* Reachability.swift in Sources */,
+				F2F6ACF8BB25CA2BAF642994DF9A5606 /* Starscream.swift in Sources */,
+				9739A3B7545AF96FCACD9932F005CCD4 /* TaskQueue.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E0ED411C31E158196BB5D813AAE2A3AB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D38E33C85D255270DBCF15E3965CB59 /* Pods-peopledex-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		886EFFFBF3EEEEE179BC93ED40529A52 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = PusherSwift;
+			target = 552B0E866B5D59775A9C0C61276107EC /* PusherSwift */;
+			targetProxy = E7A3BCD9F6D44812D7BA21638915266D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		007F1066051A467FBEB0038594E9D7C2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		086D4C420D8C494D2D86CBF3BA61D865 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EE5D718D4B0BC9CC0DD83B5F42B3159E /* PusherSwift.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/PusherSwift/PusherSwift-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/PusherSwift/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/PusherSwift/PusherSwift.modulemap";
+				PRODUCT_MODULE_NAME = PusherSwift;
+				PRODUCT_NAME = PusherSwift;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		4F27143B4092C77D027643D43A75FDD5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E93BC1995926A1333B70CEFD33FDC596 /* Pods-peopledex.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-peopledex/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-peopledex/Pods-peopledex.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		CD586366A2D3BFC832EC4205C76FDDE9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FE7C0BA979886FA7BC13DDADFA5BBA21 /* Pods-peopledex.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-peopledex/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-peopledex/Pods-peopledex.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		D21F794C487A7EF432E2C387FF85EBF5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EE5D718D4B0BC9CC0DD83B5F42B3159E /* PusherSwift.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/PusherSwift/PusherSwift-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/PusherSwift/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/PusherSwift/PusherSwift.modulemap";
+				PRODUCT_MODULE_NAME = PusherSwift;
+				PRODUCT_NAME = PusherSwift;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		E246FC26AF4A9832D7AA01080188D618 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E246FC26AF4A9832D7AA01080188D618 /* Debug */,
+				007F1066051A467FBEB0038594E9D7C2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6CA6700FBD7243C5B9D9862C65D32712 /* Build configuration list for PBXNativeTarget "Pods-peopledex" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CD586366A2D3BFC832EC4205C76FDDE9 /* Debug */,
+				4F27143B4092C77D027643D43A75FDD5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F4BD5832021C7C4A10125AE2047E9E12 /* Build configuration list for PBXNativeTarget "PusherSwift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D21F794C487A7EF432E2C387FF85EBF5 /* Debug */,
+				086D4C420D8C494D2D86CBF3BA61D865 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}
