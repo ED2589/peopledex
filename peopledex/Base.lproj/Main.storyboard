@@ -351,6 +351,31 @@
             </objects>
             <point key="canvasLocation" x="1605.5999999999999" y="777.66116941529242"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="8LA-M5-QK0">
+            <objects>
+                <viewController id="mtc-tO-tYV" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3zH-F3-ovO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fwk-2v-lWV">
+                                <rect key="frame" x="16" y="20" width="43" height="43"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="back"/>
+                                <connections>
+                                    <segue destination="raU-Ms-ssn" kind="show" id="mXZ-tp-mn2"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="bEC-dP-87y"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SiW-8c-SYk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2366" y="36"/>
+        </scene>
         <!--Setup4-->
         <scene sceneID="3Vj-RW-a9D">
             <objects>
@@ -425,6 +450,14 @@
                                 <state key="normal" image="back"/>
                                 <connections>
                                     <segue destination="BYZ-38-t0r" kind="show" id="qnJ-2W-VPj"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QJI-8J-ZEr">
+                                <rect key="frame" x="126" y="568" width="127" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="findme"/>
+                                <connections>
+                                    <segue destination="mtc-tO-tYV" kind="show" id="z45-aa-zk8"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -4792,6 +4825,7 @@ AMoAAADMAAAAzgAD5SoAA+UvAAPlOgAD5UMAA+VWAAPlWgAD5WUAA+VuAAPlcwAD5XsAA+V+AAPlgwAD
 AAAAAAAAAAAAAAAD+AI
 </mutableData>
         </image>
+        <image name="findme" width="255" height="96"/>
         <image name="finish" width="255" height="96"/>
         <image name="loginbutton" width="255" height="96"/>
         <image name="next" width="255" height="96"/>
@@ -4801,9 +4835,10 @@ AAAAAAAAAAAAAAAD+AI
         <image name="setup4" width="750" height="1334"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="EgZ-CY-pDp"/>
+        <segue reference="mXZ-tp-mn2"/>
+        <segue reference="1rS-FW-7IS"/>
         <segue reference="N7o-KL-Scv"/>
-        <segue reference="ndf-9k-9zw"/>
-        <segue reference="plw-3F-8Tw"/>
+        <segue reference="OIg-nD-6UN"/>
+        <segue reference="qnJ-2W-VPj"/>
     </inferredMetricsTieBreakers>
 </document>
