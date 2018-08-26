@@ -28,11 +28,13 @@ class ViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDele
     let locationManager = CLLocationManager()
     var blakeLocation = CLLocation()
     var franzLocation = CLLocation()
+    var lastMeasuredLocation = CLLocation()
     
     // original position of the 3D model
     var originalTransform:SCNMatrix4!
     var modelNode:SCNNode!
     let rootNodeName = "shipMesh"
+    
     
     var heading : Double! = 0.0
     var distance : Float! = 0.0 {
@@ -133,6 +135,9 @@ class ViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDele
         text += "Longitude: \(blakeLocation.coordinate.longitude)\n"
         text += "Franz Latitude: \(franzLocation.coordinate.latitude)\n"
         text += "Franz Longitude: \(franzLocation.coordinate.longitude)\n"
+        let stringFromDouble = "\(lastMeasuredLocation.horizontalAccuracy)"
+//        gpsAccuracy = stringFromDouble
+        text += "GPS Accuracy: \(stringFromDouble)\n"
         statusTextView.text = text
     }
     
@@ -158,20 +163,20 @@ class ViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDele
     func locationManager(_ manager: CLLocationManager,
                          didUpdateLocations locations: [CLLocation]) {
         if let location = locations.last {
-//            userLocation = location
-//            print("(\(location.coordinate.latitude), \(location.coordinate.longitude))")
-//            self.distance = Float(franzLocation.distance(from: self.userLocation))
+        
+         
             var locationAdded: Bool
             locationAdded = filterAndAddLocation(location)
             
-            if locationAdded{
-                //notifiyDidUpdateLocation(newLocation: newLocation)
+            if locations.count < 5 {
+                locationAdded = true
+            }
+            
+            if locationAdded {
+                lastMeasuredLocation = location
                 blakeLocation = location
                 print("Blake Location: (\(location.coordinate.latitude), \(location.coordinate.longitude))")
                 self.distance = Float(franzLocation.distance(from: self.blakeLocation))
-                if self.modelNode != nil {
-                    positionModel()
-                }
 //                if franzLocation.coordinate.latitude != nil {
 //                    positionModel(franzLocation)
 //                }
@@ -192,15 +197,16 @@ class ViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDele
     func filterAndAddLocation(_ location: CLLocation) -> Bool{
         let age = -location.timestamp.timeIntervalSinceNow
         
-        if age > 10{
+        if age > 10 {
             return false
         }
         
-        if location.horizontalAccuracy < 0{
+        if location.horizontalAccuracy < 0 {
             return false
         }
         
-        if location.horizontalAccuracy > 100{
+//        print(location.horizontalAccuracy)
+        if location.horizontalAccuracy > lastMeasuredLocation.horizontalAccuracy {
             return false
         }
         
@@ -244,19 +250,12 @@ class ViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDele
             // Create arrow from the emoji
             let arrow = makeBillboardNode("⬇️".image()!)
             // Position it on top of the car
-            arrow.position = SCNVector3Make(0, 4, 0)
+            arrow.position = SCNVector3Make(0, 0, 0)
             // Add it as a child of the car model
             self.modelNode.addChildNode(arrow)
         } else {
-            // Begin animation
-//            SCNTransaction.begin()
-//            SCNTransaction.animationDuration = 1.0
-            
             // Position the model in the correct place
             positionModel()
-            
-            // End animation
-//            SCNTransaction.commit()
         }
     }
     
@@ -284,7 +283,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDele
     
     // Scales the emoji
     func makeBillboardNode(_ image: UIImage) -> SCNNode {
-        let plane = SCNPlane(width: 2, height: 2)
+        let plane = SCNPlane(width: 0.8, height: 0.8)
         plane.firstMaterial!.diffuse.contents = image
         let node = SCNNode(geometry: plane)
         node.constraints = [SCNBillboardConstraint()]
