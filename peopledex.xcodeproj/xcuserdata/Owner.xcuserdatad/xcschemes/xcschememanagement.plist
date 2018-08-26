@@ -7,7 +7,25 @@
 		<key>peopledex.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>0</integer>
+			<integer>6</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>EB28CF692131C2A1003D767B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EB28CF7D2131C2A4003D767B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EB28CF882131C2A4003D767B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>

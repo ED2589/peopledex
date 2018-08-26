@@ -11,9 +11,16 @@
 		EB28CF702131C2A2003D767B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB28CF6F2131C2A2003D767B /* ViewController.swift */; };
 		EB28CF732131C2A2003D767B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB28CF712131C2A2003D767B /* Main.storyboard */; };
 		EB28CF752131C2A4003D767B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB28CF742131C2A4003D767B /* Assets.xcassets */; };
-		EB28CF782131C2A4003D767B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB28CF762131C2A4003D767B /* LaunchScreen.storyboard */; };
 		EB28CF832131C2A4003D767B /* peopledexTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB28CF822131C2A4003D767B /* peopledexTests.swift */; };
 		EB28CF8E2131C2A4003D767B /* peopledexUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB28CF8D2131C2A4003D767B /* peopledexUITests.swift */; };
+		EB28CF9C2131EF0E003D767B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB28CF9B2131EF0E003D767B /* LoginViewController.swift */; };
+		EB28CF9E2131FBE6003D767B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EB28CF9D2131FBE6003D767B /* GoogleService-Info.plist */; };
+		EB28CF9F2131FBE6003D767B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EB28CF9D2131FBE6003D767B /* GoogleService-Info.plist */; };
+		EB28CFA02131FBE6003D767B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EB28CF9D2131FBE6003D767B /* GoogleService-Info.plist */; };
+		EB28CFA221322DDE003D767B /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB28CFA121322DDE003D767B /* SignupViewController.swift */; };
+		EB28CFC42132790F003D767B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB28CFC32132790F003D767B /* LaunchScreen.storyboard */; };
+		EBA15FD92132A15D00A8C42E /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA15FD82132A15D00A8C42E /* LoginVC.swift */; };
+		F24C858EB8691CAD3A2FAB00 /* Pods_peopledex.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF7BA78737A3C56612481211 /* Pods_peopledex.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,12 +41,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4EB2ADD9A4FBD99A815FAFFE /* Pods-peopledex.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-peopledex.debug.xcconfig"; path = "Pods/Target Support Files/Pods-peopledex/Pods-peopledex.debug.xcconfig"; sourceTree = "<group>"; };
+		92556F11297F5CDF1C882769 /* Pods_peopledexUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_peopledexUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E42DC238D5F51A08AD813849 /* Pods-peopledex.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-peopledex.release.xcconfig"; path = "Pods/Target Support Files/Pods-peopledex/Pods-peopledex.release.xcconfig"; sourceTree = "<group>"; };
+		E6971B28BFE16CF143D0D138 /* Pods_peopledexTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_peopledexTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB28CF6A2131C2A2003D767B /* peopledex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = peopledex.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB28CF6D2131C2A2003D767B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EB28CF6F2131C2A2003D767B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		EB28CF722131C2A2003D767B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EB28CF742131C2A4003D767B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		EB28CF772131C2A4003D767B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EB28CF792131C2A4003D767B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EB28CF7E2131C2A4003D767B /* peopledexTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = peopledexTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB28CF822131C2A4003D767B /* peopledexTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = peopledexTests.swift; sourceTree = "<group>"; };
@@ -47,6 +57,12 @@
 		EB28CF892131C2A4003D767B /* peopledexUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = peopledexUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB28CF8D2131C2A4003D767B /* peopledexUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = peopledexUITests.swift; sourceTree = "<group>"; };
 		EB28CF8F2131C2A4003D767B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EB28CF9B2131EF0E003D767B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		EB28CF9D2131FBE6003D767B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		EB28CFA121322DDE003D767B /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		EB28CFC32132790F003D767B /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		EBA15FD82132A15D00A8C42E /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		EF7BA78737A3C56612481211 /* Pods_peopledex.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_peopledex.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F24C858EB8691CAD3A2FAB00 /* Pods_peopledex.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +91,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6F395CA2F336AB64436597B5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EF7BA78737A3C56612481211 /* Pods_peopledex.framework */,
+				E6971B28BFE16CF143D0D138 /* Pods_peopledexTests.framework */,
+				92556F11297F5CDF1C882769 /* Pods_peopledexUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		852581F725258D90C3C26886 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4EB2ADD9A4FBD99A815FAFFE /* Pods-peopledex.debug.xcconfig */,
+				E42DC238D5F51A08AD813849 /* Pods-peopledex.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		EB28CF612131C2A1003D767B = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +117,8 @@
 				EB28CF812131C2A4003D767B /* peopledexTests */,
 				EB28CF8C2131C2A4003D767B /* peopledexUITests */,
 				EB28CF6B2131C2A2003D767B /* Products */,
+				852581F725258D90C3C26886 /* Pods */,
+				6F395CA2F336AB64436597B5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,8 +139,12 @@
 				EB28CF6F2131C2A2003D767B /* ViewController.swift */,
 				EB28CF712131C2A2003D767B /* Main.storyboard */,
 				EB28CF742131C2A4003D767B /* Assets.xcassets */,
-				EB28CF762131C2A4003D767B /* LaunchScreen.storyboard */,
 				EB28CF792131C2A4003D767B /* Info.plist */,
+				EB28CF9D2131FBE6003D767B /* GoogleService-Info.plist */,
+				EB28CF9B2131EF0E003D767B /* LoginViewController.swift */,
+				EB28CFA121322DDE003D767B /* SignupViewController.swift */,
+				EB28CFC32132790F003D767B /* LaunchScreen.storyboard */,
+				EBA15FD82132A15D00A8C42E /* LoginVC.swift */,
 			);
 			path = peopledex;
 			sourceTree = "<group>";
@@ -132,9 +174,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EB28CF922131C2A4003D767B /* Build configuration list for PBXNativeTarget "peopledex" */;
 			buildPhases = (
+				244B12BACB98FB0A3D783A2F /* [CP] Check Pods Manifest.lock */,
 				EB28CF662131C2A1003D767B /* Sources */,
 				EB28CF672131C2A1003D767B /* Frameworks */,
 				EB28CF682131C2A1003D767B /* Resources */,
+				603DB387E73F11B863EFDA1D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -229,7 +273,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EB28CF782131C2A4003D767B /* LaunchScreen.storyboard in Resources */,
+				EB28CF9E2131FBE6003D767B /* GoogleService-Info.plist in Resources */,
+				EB28CFC42132790F003D767B /* LaunchScreen.storyboard in Resources */,
 				EB28CF752131C2A4003D767B /* Assets.xcassets in Resources */,
 				EB28CF732131C2A2003D767B /* Main.storyboard in Resources */,
 			);
@@ -239,6 +284,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB28CF9F2131FBE6003D767B /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -246,18 +292,73 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB28CFA02131FBE6003D767B /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		244B12BACB98FB0A3D783A2F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-peopledex-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		603DB387E73F11B863EFDA1D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-peopledex/Pods-peopledex-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-peopledex/Pods-peopledex-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		EB28CF662131C2A1003D767B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB28CF9C2131EF0E003D767B /* LoginViewController.swift in Sources */,
 				EB28CF702131C2A2003D767B /* ViewController.swift in Sources */,
+				EB28CFA221322DDE003D767B /* SignupViewController.swift in Sources */,
 				EB28CF6E2131C2A2003D767B /* AppDelegate.swift in Sources */,
+				EBA15FD92132A15D00A8C42E /* LoginVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,14 +400,6 @@
 				EB28CF722131C2A2003D767B /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		EB28CF762131C2A4003D767B /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				EB28CF772131C2A4003D767B /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -430,16 +523,18 @@
 		};
 		EB28CF932131C2A4003D767B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4EB2ADD9A4FBD99A815FAFFE /* Pods-peopledex.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 25X7W8DJ2G;
 				INFOPLIST_FILE = peopledex/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = hackthe6ix.peopledex;
+				PRODUCT_BUNDLE_IDENTIFIER = hackthe6ix.peopledex123;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -448,16 +543,18 @@
 		};
 		EB28CF942131C2A4003D767B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E42DC238D5F51A08AD813849 /* Pods-peopledex.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 25X7W8DJ2G;
 				INFOPLIST_FILE = peopledex/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = hackthe6ix.peopledex;
+				PRODUCT_BUNDLE_IDENTIFIER = hackthe6ix.peopledex123;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
