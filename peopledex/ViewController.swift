@@ -26,7 +26,8 @@ class ViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDele
     @IBOutlet weak var statusTextView: UITextView!
     
     let locationManager = CLLocationManager()
-    var userLocation = CLLocation()
+    var blakeLocation = CLLocation()
+    var franzLocation = CLLocation()
     
     // original position of the 3D model
     var originalTransform:SCNMatrix4!
@@ -35,12 +36,6 @@ class ViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDele
     
     var heading : Double! = 0.0
     var distance : Float! = 0.0 {
-        didSet {
-            setStatusText()
-        }
-    }
-    
-    var status: String! {
         didSet {
             setStatusText()
         }
@@ -64,13 +59,22 @@ class ViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDele
         sceneView.scene = scene
         
         // Start location services
-        locationManager.delegate = self
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        
+//        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
         locationManager.requestWhenInUseAuthorization()
-        locationManager.allowsBackgroundLocationUpdates = true
+        locationManager.pausesLocationUpdatesAutomatically = true
+        locationManager.activityType = .fitness
+        locationManager.startUpdatingLocation()
+        locationManager.delegate = self
+        self.connectToPusher()
+//        locationManager.allowsBackgroundLocationUpdates = true
+//        locationManager.startUpdatingLocation()
+        
+        
         
         // Set the initial status
-        status = "Getting user location..."
+//        status = "Getting user location..."
         
         
         // Set a padding in the text view
@@ -123,8 +127,12 @@ class ViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDele
     }
     
     func setStatusText() {
-        var text = "Status: \(status!)\n"
-        text += "Distance: \(String(format: "%.2f m", distance))"
+//        var text = "Status: \(status!)\n"
+        var text = "Distance: \(String(format: "%.2f m", distance))\n"
+        text += "Latitude: \(blakeLocation.coordinate.latitude)\n"
+        text += "Longitude: \(blakeLocation.coordinate.longitude)\n"
+        text += "Franz Latitude: \(franzLocation.coordinate.latitude)\n"
+        text += "Franz Longitude: \(franzLocation.coordinate.longitude)\n"
         statusTextView.text = text
     }
     
@@ -146,31 +154,73 @@ class ViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDele
         }
     }
     
+    // Update Blake's position
     func locationManager(_ manager: CLLocationManager,
                          didUpdateLocations locations: [CLLocation]) {
         if let location = locations.last {
-            userLocation = location
-            print("Initial location")
-            print(userLocation.coordinate.latitude)
-            print(userLocation.coordinate.longitude)
+//            userLocation = location
+//            print("(\(location.coordinate.latitude), \(location.coordinate.longitude))")
+//            self.distance = Float(franzLocation.distance(from: self.userLocation))
+            var locationAdded: Bool
+            locationAdded = filterAndAddLocation(location)
+            
+            if locationAdded{
+                //notifiyDidUpdateLocation(newLocation: newLocation)
+                blakeLocation = location
+                print("Blake Location: (\(location.coordinate.latitude), \(location.coordinate.longitude))")
+                self.distance = Float(franzLocation.distance(from: self.blakeLocation))
+                if self.modelNode != nil {
+                    positionModel()
+                }
+//                if franzLocation.coordinate.latitude != nil {
+//                    positionModel(franzLocation)
+//                }
+            }
+//            print("Got initial location")
+//            print(userLocation.coordinate.latitude)
+//            print(userLocation.coordinate.longitude)
 //            let handle = setTimeout(3, block: { () -> Void in
                 // do this stuff after 3 seconds
 //            self.status = "Uodated other person's location"
-            self.updateLocation(43.6686301,-79.3932099)
+//            self.updateLocation(43.6686301,-79.3932099)
+//            self.updateLocation
 //            })
-            self.status = "Connecting to pusher..."
-            self.connectToPusher()
+//            self.status = "Connecting to pusher..."
         }
     }
     
+    func filterAndAddLocation(_ location: CLLocation) -> Bool{
+        let age = -location.timestamp.timeIntervalSinceNow
+        
+        if age > 10{
+            return false
+        }
+        
+        if location.horizontalAccuracy < 0{
+            return false
+        }
+        
+        if location.horizontalAccuracy > 100{
+            return false
+        }
+        
+//        locationDataArray.append(location)
+        
+        return true
+        
+    }
+    
+    // Update Franz's location
     func updateLocation(_ latitude : Double, _ longitude : Double) {
         let location = CLLocation(latitude: latitude, longitude: longitude)
-        self.distance = Float(location.distance(from: self.userLocation))
-        print(latitude)
-        print(longitude)
-        print("Our location below")
-        print(self.userLocation.coordinate.latitude)
-        print(self.userLocation.coordinate.longitude)
+        franzLocation = location
+        self.distance = Float(location.distance(from: self.blakeLocation))
+//        print(latitude)
+//        print(longitude)
+//        print("Updating Franz's location")
+//        print(latitude)
+//        print(longitude)
+        print("Franz Location: (\(latitude), \(longitude))")
         if self.modelNode == nil {
             let modelScene = SCNScene(named: "art.scnassets/ship.scn")!
 //            let fileUrl = NSURL(string: "model.obj")
@@ -186,7 +236,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDele
             self.originalTransform = self.modelNode.transform
             
             // Position the model in the correct place
-            positionModel(location)
+            positionModel()
             
             // Add the model to the scene
             sceneView.scene.rootNode.addChildNode(self.modelNode)
@@ -199,14 +249,14 @@ class ViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDele
             self.modelNode.addChildNode(arrow)
         } else {
             // Begin animation
-            SCNTransaction.begin()
-            SCNTransaction.animationDuration = 1.0
+//            SCNTransaction.begin()
+//            SCNTransaction.animationDuration = 1.0
             
             // Position the model in the correct place
-            positionModel(location)
+            positionModel()
             
             // End animation
-            SCNTransaction.commit()
+//            SCNTransaction.commit()
         }
     }
     
@@ -219,36 +269,42 @@ class ViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDele
                 if let latitude = Double(data["latitude"] as! String),
                     let longitude = Double(data["longitude"] as! String) {
 //                    let heading = Double(data["heading"] as! String)  {
-                    self.status = "User's location received"
+//                    self.status = "User's location received"
 //                    self.heading = heading
+                    
                     self.updateLocation(latitude, longitude)
                 }
             }
         })
         
+//        status = "Connecting to pusher"
         pusher.connect()
-        status = "Waiting to receive location events..."
+//        status = "Waiting to receive location events..."
     }
     
     // Scales the emoji
     func makeBillboardNode(_ image: UIImage) -> SCNNode {
-        let plane = SCNPlane(width: 0.5, height: 0.5)
+        let plane = SCNPlane(width: 2, height: 2)
         plane.firstMaterial!.diffuse.contents = image
         let node = SCNNode(geometry: plane)
         node.constraints = [SCNBillboardConstraint()]
         return node
     }
     
-    func positionModel(_ location: CLLocation) {
+    func positionModel() {
+        // Animate
+        SCNTransaction.begin()
+        SCNTransaction.animationDuration = 1.0
         // Rotate node
         self.modelNode.transform = rotateNode(Float(-1 * (self.heading - 180).toRadians()), self.originalTransform)
         
         // Translate node
-        self.modelNode.position = translateNode(location)
+        self.modelNode.position = translateNode(franzLocation)
         
         // Scale node
-        self.modelNode.scale = scaleNode(location)
-        
+        self.modelNode.scale = scaleNode(franzLocation)
+//        Finish animation
+        SCNTransaction.commit()
     }
     
     func rotateNode(_ angleInRadians: Float, _ transform: SCNMatrix4) -> SCNMatrix4 {
@@ -257,8 +313,8 @@ class ViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDele
     }
     
     func scaleNode (_ location: CLLocation) -> SCNVector3 {
-        print("Scaling the plane")
-        print(distance)
+//        print("Scaling the plane")
+//        print(distance)
 //        let scale = min( max( Float(1000/distance), 1.5 ), 3 )
 //        let scale = Float(10)
         let scale = Float(0.0000001)
@@ -267,7 +323,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDele
     
     func translateNode (_ location: CLLocation) -> SCNVector3 {
         let locationTransform =
-            transformMatrix(matrix_identity_float4x4, userLocation, location)
+            transformMatrix(matrix_identity_float4x4, blakeLocation, location)
         return positionFromTransform(locationTransform)
     }
     
@@ -278,7 +334,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDele
     }
     
     func transformMatrix(_ matrix: simd_float4x4, _ originLocation: CLLocation, _ driverLocation: CLLocation) -> simd_float4x4 {
-        let bearing = bearingBetweenLocations(userLocation, driverLocation)
+        let bearing = bearingBetweenLocations(blakeLocation, driverLocation)
         let rotationMatrix = rotateAroundY(matrix_identity_float4x4, Float(bearing))
         
         let position = vector_float4(0.0, 0.0, -distance, 0.0)
