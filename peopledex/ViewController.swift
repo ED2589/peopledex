@@ -8,8 +8,9 @@
 
 import UIKit
 import SceneKit
+import SceneKit.ModelIO
 import CoreLocation
-import ARKit  
+import ARKit
 import PusherSwift
 
 let pusher = Pusher(
@@ -66,6 +67,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDele
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestWhenInUseAuthorization()
+        locationManager.allowsBackgroundLocationUpdates = true
         
         // Set the initial status
         status = "Getting user location..."
@@ -171,7 +173,12 @@ class ViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDele
         print(self.userLocation.coordinate.longitude)
         if self.modelNode == nil {
             let modelScene = SCNScene(named: "art.scnassets/ship.scn")!
+//            let fileUrl = NSURL(string: "model.obj")
+//            let fileUrl = NSURL(fileURLWithPath: "model.obj")
+//            let fileUrl = URL(string: "model.obj")
+//            let rootNode = nodeForURL(url: fileUrl!)
             self.modelNode = modelScene.rootNode.childNode(withName: rootNodeName, recursively: true)!
+//            self.modelNode = rootNode.childNode(withName: rootNodeName, recursively: true)!
             // Move model's pivot to its center in the Y axis
             let (minBox, maxBox) = self.modelNode.boundingBox
             self.modelNode.pivot = SCNMatrix4MakeTranslation(0, (maxBox.y - minBox.y)/2, 0)
@@ -210,10 +217,10 @@ class ViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDele
         let _ = channel.bind(eventName: "client-new-location", callback: { (data: Any?) -> Void in
             if let data = data as? [String : AnyObject] {
                 if let latitude = Double(data["latitude"] as! String),
-                    let longitude = Double(data["longitude"] as! String),
-                    let heading = Double(data["heading"] as! String)  {
+                    let longitude = Double(data["longitude"] as! String) {
+//                    let heading = Double(data["heading"] as! String)  {
                     self.status = "User's location received"
-                    self.heading = heading
+//                    self.heading = heading
                     self.updateLocation(latitude, longitude)
                 }
             }
@@ -253,6 +260,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDele
         print("Scaling the plane")
         print(distance)
 //        let scale = min( max( Float(1000/distance), 1.5 ), 3 )
+//        let scale = Float(10)
         let scale = Float(0.0000001)
         return SCNVector3(x: scale, y: scale, z: scale)
     }
@@ -315,5 +323,13 @@ class ViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDele
 
     // helper function for delaying execution
    func setTimeout(_ delay:TimeInterval, block:@escaping ()->Void) -> Timer {        return Timer.scheduledTimer(timeInterval: delay, target: BlockOperation(block: block), selector: #selector(Operation.main), userInfo: nil, repeats: false)
+    }
+    
+    func nodeForURL(url: URL) -> SCNNode
+    {
+        let asset = MDLAsset(url: url)
+        let object = asset.object(at: 0)
+        let node = SCNNode(mdlObject: object)
+        return node
     }
 }
